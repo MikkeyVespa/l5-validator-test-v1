@@ -17,3 +17,5 @@ export default class NumberSchema {
         return this;
     }
 }
+
+.
