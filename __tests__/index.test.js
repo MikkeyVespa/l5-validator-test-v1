@@ -48,30 +48,30 @@ test('task4', () => {
   assert.equal(schema2.isValid([1, 23, 4, 5]), false);
 });
 
-// test('task5', () => {
-//   const validator = new Validator();
-//   const schema1 = validator.object().shape({
-//     id: validator.number().odd(),
-//     basket: validator.array().length(3),
-//   });
-//   const schema2 = validator.object().shape({
-//     id: validator.number().even(),
-//     basket: validator.array().length(1231233),
-//   });
-//   const schema3 = validator.object().shape({
-//     id: validator.number().even(),
-//     basket: validator.array().length(2),
-//     payment: validator.array().length(2),
-//   });
+test('task5', () => {
+  const validator = new Validator();
+  const schema1 = validator.object().shape({
+    id: validator.number().odd(),
+    basket: validator.array().length(3),
+  });
+  const schema2 = validator.object().shape({
+    id: validator.number().even(),
+    basket: validator.array().length(1231233),
+  });
+  const schema3 = validator.object().shape({
+    id: validator.number().even(),
+    basket: validator.array().length(2),
+    payment: validator.array().length(2),
+  });
 
-//   assert.equal(schema1.isValid({ id: 11, basket: ['potatos', 'tomatos', 'oranges'] }), true);
-//   assert.equal(schema1.isValid({ id: 12, basket: ['potatos', 'tomatos', 'oranges'] }), false);
-//   assert.equal(schema1.isValid({}), false);
-//   assert.equal(schema2.isValid({ id: 11, basket: [] }), false);
-//   assert.equal(schema2.isValid([1, 23, 4, 5]), false);
-//   assert.equal(schema2.isValid(2), false);
-//   assert.equal(schema3.isValid({ id: 16, basket: ['apple', 'cucumber'], payment: ['10 dollars', '10 cents'] }), true);
-//   assert.equal(schema3.isValid({ id: 17, basket: ['apple', 'cucumber'], payment: ['10 dollars', '10 cents'] }), false);
-//   assert.equal(schema3.isValid({ id: 16, basket: ['apple'], payment: ['10 dollars', '10 cents'] }), false);
-//   assert.equal(schema3.isValid({ id: 16, payment: ['10 dollars', '10 cents'] }), false);
-// });
+  assert.equal(schema1.isValid({ id: 11, basket: ['potatos', 'tomatos', 'oranges'] }), true);
+  assert.equal(schema1.isValid({ id: 12, basket: ['potatos', 'tomatos', 'oranges'] }), false);
+  assert.equal(schema1.isValid({}), false);
+  assert.equal(schema2.isValid({ id: 11, basket: [] }), false);
+  assert.equal(schema2.isValid([1, 23, 4, 5]), false);
+  assert.equal(schema2.isValid(2), false);
+  assert.equal(schema3.isValid({ id: 16, basket: ['apple', 'cucumber'], payment: ['10 dollars', '10 cents'] }), true);
+  assert.equal(schema3.isValid({ id: 17, basket: ['apple', 'cucumber'], payment: ['10 dollars', '10 cents'] }), false);
+  assert.equal(schema3.isValid({ id: 16, basket: ['apple'], payment: ['10 dollars', '10 cents'] }), false);
+  assert.equal(schema3.isValid({ id: 16, payment: ['10 dollars', '10 cents'] }), false);
+});
