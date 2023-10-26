@@ -1,19 +1,19 @@
 export default class NumberSchema {
-    validators = [(value) => typeof value === 'number'];
-
+    constructor(validators) {
+      this.validators = [...validators];
+    }
+  
     isValid(value) {
-        return this.validators.every((validator) => validator(value) === true);
+      return this.validators.every((validator) => validator(value) === true);
     }
-
+  
     even() {
-        const validator = (value) => value % 2 === 0;
-        this.validators.push(validator);
-        return this;
+      const validator = (value) => value % 2 === 0;
+      return new NumberSchema([...this.validators, validator]);
     }
-    
+  
     odd() {
-        const validator = (value) => value % 2 !== 0;
-        this.validators.push(validator);
-        return this;
+      const validator = (value) => value % 2 !== 0;
+      return new NumberSchema([...this.validators, validator]);
     }
-}
+  }

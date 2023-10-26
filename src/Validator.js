@@ -5,15 +5,16 @@ import ObjectSchema from './ObjectSchema.js';
 
 export default class Validator {
   number() {
-    return new NumberSchema();
+    const validator = (value) => typeof value === 'number';
+    return new NumberSchema([validator]);
   }
 
   array() {
-    return new ArraySchema();
+    const validator = (value) => Array.isArray(value);
+    return new ArraySchema([validator]);
   }
 
   object() {
     return new ObjectSchema();
   }
-
 }
