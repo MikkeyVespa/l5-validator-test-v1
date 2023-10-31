@@ -15,5 +15,5 @@ export default class Validator {
   object() {
     return new ObjectSchema();
   }
-
+.
 }
